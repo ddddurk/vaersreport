@@ -4,17 +4,35 @@ import pandas as pd
 
 CSV_PATH = f"{os.path.dirname(__file__)}/csv"
 
+DATA_PATH = f"{os.path.dirname(__file__)}/../data.json"
 
-def get_csv(dataset, non_domestic, year):
+
+def get_data(data, non_domestic, year):
     return pd.read_csv(
-        get_csv_path(dataset, non_domestic, year),
+        get_data_path(data, non_domestic, year),
         encoding="latin1",
         engine="python",
     )
 
 
-def get_csv_path(dataset, non_domestic, year):
-    return f"{CSV_PATH}/{'non_domestic' if non_domestic else 'domestic'}/{year}VAERS{dataset}.csv"
+def get_data_path(data, non_domestic, year):
+    return f"{CSV_PATH}/{'non_domestic' if non_domestic else 'domestic'}/{year}VAERS{data}.csv"
+
+
+MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+]
 
 
 VAERS_DATASETS = ["DATA", "SYMPTOMS", "VAX"]

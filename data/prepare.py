@@ -1,7 +1,7 @@
 from helpers import (
     CSV_PATH,
-    get_csv,
-    get_csv_path,
+    get_data,
+    get_data_path,
     VAERS_DATASETS,
     YEARS,
 )
@@ -38,7 +38,7 @@ def main():
         )
 
         for year in YEARS:
-            year_non_domestic_dataset_path = get_csv_path(
+            year_non_domestic_dataset_path = get_data_path(
                 dataset, True, year
             )
 
@@ -49,7 +49,7 @@ def main():
             if dataset == "DATA":
                 year_df = df[df["RECVDATE"].str.contains(year)]
             else:
-                data_df = get_csv("DATA", True, year)
+                data_df = get_data("DATA", True, year)
                 vaers_ids = data_df["VAERS_ID"].to_list()
                 year_df = df[
                     df["VAERS_ID"].isin(vaers_ids)
