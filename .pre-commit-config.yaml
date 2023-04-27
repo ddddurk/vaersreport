@@ -1,0 +1,13 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: app
+        entry: bash -c "cd ./app && pnpm chore:lint"
+        language: system
+        name: app
+        verbose: true
+    -   id: data
+        entry: bash -c "cd ./data && black ./"
+        language: system
+        name: data
+        verbose: true
