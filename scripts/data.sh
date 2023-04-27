@@ -1,1 +1,1 @@
-python ./data/prepare.py
+python ./data/data.py
