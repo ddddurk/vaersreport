@@ -3,6 +3,4 @@
 node_modules/
 
 __pycache__
-NonDomesticVAERSDATA.csv
-NonDomesticVAERSSYMPTOMS.csv
-NonDomesticVAERSVAX.csv
+csv/
