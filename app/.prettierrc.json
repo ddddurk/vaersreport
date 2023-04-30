@@ -2,6 +2,10 @@
   "$schema": "http://json.schemastore.org/prettierrc",
   "bracketSpacing": true,
   "endOfLine": "auto",
+  "plugins": [
+    "prettier-plugin-packagejson",
+    "prettier-plugin-tailwindcss"
+  ],
   "printWidth": 65,
   "semi": true,
   "singleQuote": false,
