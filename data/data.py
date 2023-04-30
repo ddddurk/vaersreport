@@ -1,14 +1,18 @@
-from calculations.data.ages import ages
-from calculations.data.outcomes import outcomes
-from calculations.data.sexes import sexes
-from calculations.data.totals import totals
-from calculations.vax.vaccines import vaccines
-from helpers import DATA_PATH, get_data, MONTHS, YEARS
+from analysis.years.data.ages import ages
+from analysis.years.data.outcomes import outcomes
+from analysis.years.data.sexes import sexes
+from analysis.years.data.totals import totals
+from analysis.years.vax.vaccines import vaccines
+from lib.constants import DATA_PATH, MONTHS, YEARS
+from lib.data import get_data
+from lib.merge import merge
 import json
 
 
 def main():
     data = {}
+
+    years = {}
 
     for year in YEARS:
         print(f"Analyzing {year}...")
@@ -88,24 +92,39 @@ def main():
 
             year_data[month] = month_year_data
 
-        year_data["ages"] = ages(
+        year_all = {}
+
+        year_all["ages"] = ages(
             domestic_year_data, non_domestic_year_data
         )
-        year_data["outcomes"] = outcomes(
+        year_all["outcomes"] = outcomes(
             domestic_year_data, non_domestic_year_data
         )
-        year_data["sexes"] = sexes(
+        year_all["sexes"] = sexes(
             domestic_year_data, non_domestic_year_data
         )
-        year_data["totals"] = totals(
+        year_all["totals"] = totals(
             domestic_year_data, non_domestic_year_data
         )
 
-        year_data["vaccines"] = vaccines(
+        year_all["vaccines"] = vaccines(
             domestic_year_vax, non_domestic_year_vax
         )
 
-        data[year] = year_data
+        year_data["all"] = year_all
+
+        years[year] = year_data
+
+    data["years"] = years
+
+    print("Calculating all...")
+
+    all = {}
+
+    for year in YEARS:
+        all = merge(all, data["years"][year])
+
+    data["all"] = all
 
     with open(DATA_PATH, "w") as f:
         json.dump(data, f)

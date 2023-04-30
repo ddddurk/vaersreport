@@ -9,7 +9,7 @@ def vaccines(domestic_data, non_domestic_data):
         set(vaccines_list_domestic + vaccines_list_non_domestic)
     )
 
-    totals = []
+    totals = {}
 
     for vaccine in vaccines_list_total:
         vaccine_total_domestic = len(
@@ -24,14 +24,11 @@ def vaccines(domestic_data, non_domestic_data):
             vaccine_total_domestic + vaccine_total_non_domestic
         )
 
-        totals.append(
-            {
-                "domestic": vaccine_total_domestic,
-                "non_domestic": vaccine_total_non_domestic,
-                "total": vaccine_total,
-                "vaccine": vaccine,
-            }
-        )
+        totals[vaccine] = {
+            "domestic": vaccine_total_domestic,
+            "non_domestic": vaccine_total_non_domestic,
+            "total": vaccine_total,
+        }
 
     return {
         "lists": {
