@@ -1,6 +1,7 @@
 {
   "name": "app",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "build": "next build",
     "chore:lint": "pnpm chore:lint:prettier && pnpm chore:lint:eslint",
@@ -11,9 +12,12 @@
   "dependencies": {
     "next": "^13.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "recharts": "^2.6.0"
   },
   "devDependencies": {
+    "@ddddurk/cli": "^1.1.6",
+    "@ddddurk/colors": "^1.1.2",
     "@types/node": "18.16.5",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
