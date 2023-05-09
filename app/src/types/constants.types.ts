@@ -1,8 +1,6 @@
-import type data from "@data";
+import type charts from "@charts";
 
-export type Year = keyof typeof data.years;
-
-export type Month = Exclude<
-  keyof (typeof data.years)[Year],
+export type Year = Exclude<
+  keyof typeof charts.ages_chart,
   "all"
 >;
