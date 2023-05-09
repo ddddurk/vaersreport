@@ -1,13 +1,13 @@
 repos:
--   repo: local
+  - repo: local
     hooks:
-    -   id: app
+      - id: app
         entry: bash -c "cd ./app && pnpm chore:lint"
         language: system
         name: app
         verbose: true
-    -   id: data
-        entry: bash -c "cd ./data && black ./"
+      - id: data
+        entry: bash -c "cd ./notebook && black ./"
         language: system
         name: data
         verbose: true
