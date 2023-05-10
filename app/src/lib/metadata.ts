@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     images: [
       {
         height: 1080,
-        url: `${url}/assets/og.png`,
+        url: `${url}/og.png`,
         width: 1920
       }
     ],
@@ -35,6 +35,6 @@ export const metadata: Metadata = {
     title
   },
   icons: {
-    shortcut: "/favicon/favicon.ico"
+    shortcut: "/favicon.ico"
   }
 };

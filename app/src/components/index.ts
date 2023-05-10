@@ -1,3 +1,6 @@
+export { default as BackToTopButton } from "./BackToTopButton";
+export { default as Body } from "./Body";
+export * from "./Body";
 export { default as Chart } from "./Chart";
 export * from "./Chart";
 export { default as ChartCaption } from "./ChartCaption";
@@ -13,6 +16,8 @@ export * from "./Filters";
 export { default as FiltersYear } from "./FiltersYear";
 export * from "./FiltersYear";
 export { default as Footer } from "./Footer";
+export { default as Main } from "./Main";
+export * from "./Main";
 export { default as Navigation } from "./Navigation";
 export { default as PolymorphGrid } from "./PolymorphGrid";
 export { default as PolymorhUnderline } from "./PolymorphUnderline";
