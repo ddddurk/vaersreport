@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const description =
   "Accessible data visualization for the CDC's public VAERS data.";
 const title = "VAERS Report";
-const url = "vaersreport.ddddurk.com";
+const url = "https://vaersreport.ddddurk.com";
 
 export const metadata: Metadata = {
   description,
