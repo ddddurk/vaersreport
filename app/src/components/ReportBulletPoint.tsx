@@ -8,8 +8,8 @@ const ReportBulletPoint = ({
   children
 }: ReportBulletPointProps) => {
   return (
-    <div className="mx-auto mt-8 flex w-full max-w-lg space-x-6">
-      <span className="mt-2 h-2 w-2 bg-black" />
+    <div className="mx-auto mt-8 flex w-full max-w-xl justify-center space-x-6">
+      <span className="mt-2.5 h-2 w-2 bg-black" />
       <p>{children}</p>
     </div>
   );

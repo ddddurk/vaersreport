@@ -7,7 +7,8 @@ import {
   colors,
   getNumberFormatted,
   getNumberPercentage,
-  getTense
+  getTense,
+  monthsFull
 } from "@lib";
 import type { Year } from "@types";
 import { useParams } from "next/navigation";
@@ -51,15 +52,15 @@ const Report = () => {
   } = {
     bulletPoints: [
       <Fragment>
+        VAERS reports {getTense("totaled", year)}{" "}
         <DynamicText>
           {getNumberFormatted(
             year
               ? analysis.intervals[year].all.totals.total
               : analysis.all.totals.total
           )}
-        </DynamicText>{" "}
-        VAERS total reports {getTense("submitted", year)} to the
-        CDC.
+        </DynamicText>
+        .
       </Fragment>
     ],
     sections: [
@@ -104,7 +105,8 @@ const Report = () => {
               <Fragment>
                 Total VAERS reports {getTense("peaked", year)} in{" "}
                 <DynamicText>
-                  {chartsTotals.interval_most}
+                  {monthsFull[chartsTotals.interval_most] ||
+                    chartsTotals.interval_most}
                 </DynamicText>{" "}
                 with{" "}
                 <DynamicText>
