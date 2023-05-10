@@ -1,6 +1,12 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@dddstack/polymorph-react':
+    specifier: ^1.0.2
+    version: 1.0.2(react@18.2.0)
+  clsx:
+    specifier: ^1.2.1
+    version: 1.2.1
   next:
     specifier: ^13.4.1
     version: 13.4.1(react-dom@18.2.0)(react@18.2.0)
@@ -10,6 +16,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-icons:
+    specifier: ^4.8.0
+    version: 4.8.0(react@18.2.0)
   recharts:
     specifier: 2.1.12
     version: 2.1.12(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
@@ -131,6 +140,19 @@ packages:
       commander: 10.0.1
       handlebars: 4.7.7
     dev: true
+
+  /@dddstack/polymorph-generics@1.0.2:
+    resolution: {integrity: sha512-GO1KepzsMXfjLsrpMtWtJf/8wS0wabWXUJV3hHy6ZuiyUNZolikVvP72FOvzIqpuEmbppcYTkxHLG4KvcrG+iw==}
+    dev: false
+
+  /@dddstack/polymorph-react@1.0.2(react@18.2.0):
+    resolution: {integrity: sha512-Al3c+pGuB2YLyzjyjPs4JDJSj4MY7OWE+zOBGBMs1wu7GZ/PiUieaCUCSSoIoDXIRogw1eOqpotChHyceu/uwQ==}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      '@dddstack/polymorph-generics': 1.0.2
+      react: 18.2.0
+    dev: false
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.39.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -707,6 +729,11 @@ packages:
 
   /client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
+
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: false
 
   /color-convert@2.0.1:
@@ -1957,6 +1984,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons@4.8.0(react@18.2.0):
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:

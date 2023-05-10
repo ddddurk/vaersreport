@@ -5,6 +5,7 @@ const config: Config = {
   content: ["./src/**/*.tsx"],
   theme: {
     colors: {
+      black: ddddurkColors.black.black,
       blue: ddddurkColors.blue,
       gray: ddddurkColors.gray,
       white: ddddurkColors.white.white

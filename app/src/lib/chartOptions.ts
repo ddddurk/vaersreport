@@ -1,15 +1,12 @@
 export const chartOptions = {
   bar: {
-    maxBarSize: 50
-  },
-  barChart: {
-    margin: { right: 100 }
+    maxBarSize: 40
   },
   legend: {
     margin: { left: 100 }
   },
   responsiveContainer: {
-    aspect: 3,
+    aspect: 2,
     maxHeight: 300
   },
   tooltip: {

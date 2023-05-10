@@ -2,14 +2,12 @@
 
 import { colors } from "@lib";
 
-const TreemapCustomContent = ({
-  root,
+const ChartTreemapCustomContent = ({
   depth,
   x,
   y,
   width,
   height,
-  index,
   name
 }) => {
   return (
@@ -20,7 +18,7 @@ const TreemapCustomContent = ({
         width={width}
         height={height}
         style={{
-          fill: depth < 2 ? colors.sequential[2] : "none",
+          fill: depth < 2 ? colors.sequential[4] : "none",
           stroke: "#fff",
           strokeWidth: 2 / (depth + 1e-10),
           strokeOpacity: 1 / (depth + 1e-10)
@@ -40,4 +38,4 @@ const TreemapCustomContent = ({
   );
 };
 
-export default TreemapCustomContent;
+export default ChartTreemapCustomContent;

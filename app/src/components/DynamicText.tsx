@@ -1,13 +1,13 @@
-"use client";
-
 import type { ReactNode } from "react";
 
-interface DynamicTextProps {
+export interface DynamicTextProps {
   children: ReactNode;
 }
 
 const DynamicText = ({ children }: DynamicTextProps) => {
-  return <span>{children}</span>;
+  return (
+    <span className="font-bold text-blue-600">{children}</span>
+  );
 };
 
 export default DynamicText;

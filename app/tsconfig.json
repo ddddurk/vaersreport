@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
+      "@analysis": ["../data/analysis.json"],
       "@charts": ["../data/charts.json"],
       "@components": ["./src/components"],
       "@lib": ["./src/lib"],

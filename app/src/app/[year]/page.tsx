@@ -5,12 +5,10 @@ import type { NextPage } from "next";
 export const generateStaticParams = async () =>
   years.map((year) => ({ year }));
 
-const Page: NextPage = () => {
-  return (
-    <>
-      <Report />
-    </>
-  );
-};
+export const generateMetadata = async ({ params }) => ({
+  title: params.year
+});
+
+const Page: NextPage = () => <Report />;
 
 export default Page;

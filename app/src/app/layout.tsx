@@ -1,13 +1,34 @@
 import "tailwindcss/tailwind.css";
 
-import type { NextLayout } from "@types";
+import {
+  Filters,
+  Footer,
+  Navigation,
+  PolymorphGrid
+} from "@components";
+import { metadata as libMetadata } from "@lib";
+import type { ReactNode } from "react";
 
-const Layout = ({ children }: NextLayout) => {
+export const metadata = libMetadata;
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
-      <body className="grid grid-cols-[1fr,min(56.25rem,100%),1fr] p-6 text-lg text-gray-800 antialiased [&>*]:col-start-2 [&_.recharts-default-legend]:!ml-[100px] [&_.recharts-default-legend]:text-sm [&_.recharts-responsive-container]:max-w-[900px] [&_.recharts-tooltip-item]:!p-0 [&_.recharts-tooltip-label]:!mt-0 [&_.recharts-tooltip-label]:pb-1 [&_.recharts-tooltip-label]:!text-left [&_.recharts-tooltip-label]:font-bold [&_.recharts-tooltip-wrapper_*]:text-sm">
-        {children}
-      </body>
+      <PolymorphGrid
+        as="body"
+        className="bg-white text-lg text-gray-800 antialiased [&_*]:transition-all [&_.recharts-legend-item]:text-sm [&_.recharts-tooltip-item]:!p-0 [&_.recharts-tooltip-item]:!text-sm [&_.recharts-tooltip-label]:text-sm [&_.recharts-tooltip-label]:font-bold"
+      >
+        <Navigation />
+        <Filters />
+        <PolymorphGrid as="main" className="px-6">
+          {children}
+        </PolymorphGrid>
+        <Footer />
+      </PolymorphGrid>
     </html>
   );
 };
