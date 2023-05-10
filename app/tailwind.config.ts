@@ -1,10 +1,16 @@
+import ddddurkColors from "@ddddurk/colors/colors/colors.json";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/**/*.{ts,tsx}",
-    "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}"
-  ]
+  content: ["./src/**/*.tsx"],
+  theme: {
+    colors: {
+      black: ddddurkColors.black.black,
+      blue: ddddurkColors.blue,
+      gray: ddddurkColors.gray,
+      white: ddddurkColors.white.white
+    }
+  }
 };
 
 export default config;

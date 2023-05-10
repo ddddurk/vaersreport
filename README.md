@@ -1,6 +1,6 @@
 # VAERS Report
 
-Accessible data visualization for CDC public VAERS data.
+Accessible data visualization for the CDC's public VAERS data.
 
 ## Repository
 
@@ -17,4 +17,4 @@ Accessible data visualization for CDC public VAERS data.
 - `lint.sh`: Lint `app` and `notebook`.
 - `unzip.sh`: Unzip `AllVAERSDataCSVS.zip` file from [https://vaers.hhs.gov/data/datasets.html](https://vaers.hhs.gov/data/datasets.html).
 
-_Note_: `unzip.sh` is automatically called by `notebook`.
+_Note_: `unzip.sh` is automatically run in `notebook`.
