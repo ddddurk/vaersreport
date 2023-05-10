@@ -15,7 +15,7 @@ const Footer = () => {
             href="https://github.com/ddddurk"
             target="_blank"
           >
-            Built by ddddurk
+            Made by ddddurk
           </PolymorphUnderline>
         </li>
         <li>
