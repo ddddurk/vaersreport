@@ -1,6 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/eslintrc",
-  "extends": ["plugin:json/recommended"],
+  "extends": [
+    "plugin:json/recommended",
+    "plugin:@next/next/recommended"
+  ],
   "ignorePatterns": [".next/", "node_modules"],
   "parser": "@typescript-eslint/parser",
   "overrides": [
