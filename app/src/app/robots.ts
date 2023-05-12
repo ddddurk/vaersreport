@@ -6,7 +6,7 @@ const robots = () => ({
       userAgent: "*"
     }
   ],
-  sitemap: `${metadata.openGraph.url}sitemap.xml`,
+  sitemap: `${metadata.openGraph.url}/sitemap.xml`,
   host: metadata.openGraph.url
 });
 
