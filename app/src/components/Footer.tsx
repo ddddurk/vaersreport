@@ -12,7 +12,7 @@ const Footer = () => {
         <li>
           <PolymorphUnderline
             className="w-fit"
-            href="https://github.com/ddddurk"
+            href="https://ddddurk.com"
             target="_blank"
           >
             Made by ddddurk
