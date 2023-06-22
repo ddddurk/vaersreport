@@ -1,12 +1,6 @@
-import "tailwindcss/tailwind.css";
+import "../index.css";
 
-import {
-  Body,
-  Filters,
-  Footer,
-  Main,
-  Navigation
-} from "@components";
+import { Filters, Footer, Main } from "@components";
 import { metadata as libMetadata } from "@lib";
 import type { ReactNode } from "react";
 
@@ -19,12 +13,13 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
-      <Body>
-        <Navigation />
-        <Filters />
-        <Main>{children}</Main>
-        <Footer />
-      </Body>
+      <body>
+        <Main>
+          <Filters />
+          {children}
+          <Footer />
+        </Main>
+      </body>
     </html>
   );
 };

@@ -1,13 +1,19 @@
-import type { ReactNode } from "react";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface ChartDescriptionProps {
-  children: ReactNode;
-}
+export interface ChartDescriptionProps
+  extends Omit<
+      HTMLAttributes<HTMLParagraphElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
-const ChartDescription = ({
-  children
-}: ChartDescriptionProps) => {
-  return <p className="mt-8 text-center text-lg">{children}</p>;
-};
-
-export default ChartDescription;
+export const ChartDescription = ({
+  children,
+  ...props
+}: ChartDescriptionProps) => (
+  <panda.p fontSize="lg" mt="8" textAlign="center" {...props}>
+    {children}
+  </panda.p>
+);

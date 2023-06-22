@@ -1,15 +1,25 @@
-import type { ReactNode } from "react";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface ReportTitleProps {
-  children: ReactNode;
-}
+export interface ReportTitleProps
+  extends Omit<
+      HTMLAttributes<HTMLHeadingElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
-const ReportTitle = ({ children }: ReportTitleProps) => {
-  return (
-    <h1 className="mt-24 text-center text-3xl font-bold">
-      {children}
-    </h1>
-  );
-};
-
-export default ReportTitle;
+export const ReportTitle = ({
+  children,
+  ...props
+}: ReportTitleProps) => (
+  <panda.h1
+    fontSize="3xl"
+    fontWeight="bold"
+    mt="32"
+    textAlign="center"
+    {...props}
+  >
+    {children}
+  </panda.h1>
+);

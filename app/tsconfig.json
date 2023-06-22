@@ -16,6 +16,7 @@
       "@charts": ["../data/charts.json"],
       "@components": ["./src/components"],
       "@lib": ["./src/lib"],
+      "@panda/*": ["./panda/*"],
       "@types": ["./src/types"]
     },
     "plugins": [
@@ -28,5 +29,5 @@
     "strict": false
   },
   "exclude": ["./node_modules"],
-  "include": [".next/types/**/*.ts", "src"]
+  "include": [".next/types/**/*.ts", "panda.config.ts", "src"]
 }

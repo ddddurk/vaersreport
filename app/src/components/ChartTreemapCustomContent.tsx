@@ -2,7 +2,7 @@
 
 import { colors } from "@lib";
 
-const ChartTreemapCustomContent = ({
+export const ChartTreemapCustomContent = ({
   depth,
   x,
   y,
@@ -37,5 +37,3 @@ const ChartTreemapCustomContent = ({
     </g>
   );
 };
-
-export default ChartTreemapCustomContent;

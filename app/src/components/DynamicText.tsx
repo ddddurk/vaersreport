@@ -1,13 +1,19 @@
-import type { ReactNode } from "react";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface DynamicTextProps {
-  children: ReactNode;
-}
+export interface DynamicTextProps
+  extends Omit<
+      HTMLAttributes<HTMLSpanElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
-const DynamicText = ({ children }: DynamicTextProps) => {
-  return (
-    <span className="font-bold text-blue-600">{children}</span>
-  );
-};
-
-export default DynamicText;
+export const DynamicText = ({
+  children,
+  ...props
+}: DynamicTextProps) => (
+  <panda.span color="blue.600" fontWeight="bold" {...props}>
+    {children}
+  </panda.span>
+);

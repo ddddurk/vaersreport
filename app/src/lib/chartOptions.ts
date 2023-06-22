@@ -19,6 +19,6 @@ export const chartOptions = {
   yAxis: {
     fontSize: "0.75rem",
     fontWeight: 600,
-    width: 70
+    width: 80
   }
 };

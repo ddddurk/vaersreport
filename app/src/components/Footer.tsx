@@ -1,29 +1,37 @@
-import BackToTopButton from "./BackToTopButton";
-import PolymorphGrid from "./PolymorphGrid";
-import PolymorphUnderline from "./PolymorphUnderline";
+import { panda } from "@panda/jsx";
 
-const Footer = () => {
-  return (
-    <PolymorphGrid
-      as="footer"
-      className="!col-span-3 !col-start-1 mt-48 bg-gray-100 px-6 pt-[4px] text-base font-bold"
+import { Container } from "./Container";
+import { FooterLink } from "./FooterLink";
+
+const links = [
+  { href: "https://ddddurk.com", text: "ddddurk" },
+  {
+    href: "https://github.com/dddvilla/vaersreport",
+    text: "GitHub"
+  },
+  { href: "https://vaers.hhs.gov/index.html", text: "VAERS" }
+];
+
+export const Footer = () => (
+  <Container
+    mb={{ base: "12", md: "16" }}
+    mt={{ base: "24", md: "32" }}
+  >
+    <panda.footer
+      alignItems="center"
+      display="grid"
+      gap="4"
+      gridTemplateColumns="3"
     >
-      <ul className="grid grid-cols-[1fr,auto] gap-x-6">
-        <li>
-          <PolymorphUnderline
-            className="w-fit"
-            href="https://ddddurk.com"
-            target="_blank"
-          >
-            Made by ddddurk
-          </PolymorphUnderline>
-        </li>
-        <li>
-          <BackToTopButton />
-        </li>
-      </ul>
-    </PolymorphGrid>
-  );
-};
-
-export default Footer;
+      {links.map((link) => (
+        <FooterLink
+          css={{ w: "full" }}
+          href={link.href}
+          key={link.text}
+        >
+          {link.text}
+        </FooterLink>
+      ))}
+    </panda.footer>
+  </Container>
+);

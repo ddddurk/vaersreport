@@ -1,35 +1,27 @@
+"use client";
+
 import { years } from "@lib";
 import type { Year } from "@types";
 import { useParams, useRouter } from "next/navigation";
 
-import Select from "./Select";
+import { Select } from "./Select";
 
-const FiltersYear = () => {
+export const FiltersYear = () => {
   const { year } = useParams() as { year: undefined | Year };
   const router = useRouter();
 
   return (
     <Select
-      className="font-bold"
-      onChange={(event) =>
+      defaultValue={{
+        label: year || "All Years",
+        value: year || "All Years"
+      }}
+      onChange={(option) =>
         router.push(
-          `/${
-            event.target.value !== "all"
-              ? event.target.value
-              : ""
-          }`
+          `/${option.value === "All Years" ? "" : option.value}`
         )
       }
-      value={year || "all"}
-    >
-      <option value="all">All Years</option>
-      {years.map((year) => (
-        <option key={year} value={year}>
-          {year}
-        </option>
-      ))}
-    </Select>
+      options={["All Years", ...years]}
+    ></Select>
   );
 };
-
-export default FiltersYear;
