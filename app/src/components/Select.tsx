@@ -43,6 +43,11 @@ export const Select = ({
             py: "2",
             rounded: "xl",
             w: "40",
+            _focus: {
+              outlineColor: "blue.300",
+              outlineStyle: "solid",
+              outlineWidth: "2px"
+            },
             _hover: {
               bg: "gray.100"
             }
@@ -51,7 +56,7 @@ export const Select = ({
           <panda.span fontWeight="bold">
             {selectedOption?.label}
           </panda.span>
-          <IconSelector />
+          <IconSelector size={16} />
         </SelectTrigger>
         <SelectContent
           className={css({
@@ -95,6 +100,7 @@ export const Select = ({
                       : "gray.100"
                 }
               })}
+              key={option.label || option}
               label={option.label || option}
               value={option.value || option}
             >
