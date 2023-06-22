@@ -31,6 +31,7 @@ export const Select = ({
         <SelectTrigger
           className={css({
             alignItems: "center",
+            bg: "white",
             borderColor: "gray.200",
             borderStyle: "solid",
             borderWidth: "1px",
@@ -43,11 +44,6 @@ export const Select = ({
             py: "2",
             rounded: "xl",
             w: "40",
-            _focus: {
-              outlineColor: "blue.300",
-              outlineStyle: "solid",
-              outlineWidth: "2px"
-            },
             _hover: {
               bg: "gray.100"
             }
@@ -60,6 +56,7 @@ export const Select = ({
         </SelectTrigger>
         <SelectContent
           className={css({
+            bg: "white",
             borderColor: "gray.200",
             borderStyle: "solid",
             borderWidth: "1px",
