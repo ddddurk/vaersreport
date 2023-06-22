@@ -23,6 +23,7 @@ export const FooterLink = ({
         alignItems: "center",
         color: "gray.500",
         display: "flex",
+        fontSize: { base: "sm", md: "inherit" },
         gap: "2",
         justifyContent: "space-between",
         _hover: { color: "inherit" },

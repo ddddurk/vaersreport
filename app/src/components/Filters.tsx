@@ -9,7 +9,10 @@ export const Filters = () => (
     backdropBlur="xl"
     backdropFilter="auto"
     backdropSaturate="2"
-    bg="rgba(255, 255, 255, 0.75)"
+    bg={{
+      base: "white",
+      md: "rgba(255, 255, 255, 0.75)"
+    }}
     left="0"
     mx="auto"
     p={{ base: "4", md: "6" }}

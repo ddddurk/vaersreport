@@ -6,6 +6,30 @@ on:
       - main
 
 jobs:
+  build:
+    name: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@master
+        with:
+          node-version: 16.x
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - run: sh ./scripts/install.sh
+        shell: bash
+
+      - run: sh ./scripts/build.sh
+        shell: bash
+
   lint:
     name: lint
 
@@ -28,4 +52,28 @@ jobs:
         shell: bash
 
       - run: sh ./scripts/lint.sh
+        shell: bash
+
+  typecheck:
+    name: typecheck
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@master
+        with:
+          node-version: 16.x
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - run: sh ./scripts/install.sh
+        shell: bash
+
+      - run: sh ./scripts/test_typecheck.sh
         shell: bash

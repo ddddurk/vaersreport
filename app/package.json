@@ -15,11 +15,13 @@
     "panda": "panda",
     "prepare": "pnpm prepare:panda",
     "prepare:panda": "panda codegen --clean",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "test:typecheck": "tsc --noEmit",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@ark-ui/react": "^0.6.0",
-    "@ddddurk/ui": "^2.0.0",
+    "@ddddurk/ui": "^2.0.1",
     "@tabler/icons-react": "^2.22.0",
     "next": "^13.4.1",
     "react": "^18.2.0",
@@ -27,6 +29,7 @@
     "recharts": "2.1.12"
   },
   "devDependencies": {
+    "@csstools/postcss-cascade-layers": "^3.0.1",
     "@ddddurk/cli": "^1.1.6",
     "@next/eslint-plugin-next": "^13.4.1",
     "@pandacss/dev": "^0.4.0",
@@ -35,6 +38,7 @@
     "@types/react-dom": "^18.2.1",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-json": "^3.1.0",

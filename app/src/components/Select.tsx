@@ -31,18 +31,26 @@ export const Select = ({
         <SelectTrigger
           className={css({
             alignItems: "center",
+            bg: "white",
             borderColor: "gray.200",
             borderStyle: "solid",
             borderWidth: "1px",
             cursor: "pointer",
             display: "flex",
+            fontSize: { base: "sm", md: "inherit" },
             gap: "2",
             justifyContent: "space-between",
             pos: "relative",
-            px: "4",
-            py: "2",
+            pb: "2",
+            pl: "4",
+            pr: "4",
+            pt: "2",
             rounded: "xl",
             w: "40",
+            _focus: {
+              outline: "none",
+              ring: "none"
+            },
             _hover: {
               bg: "gray.100"
             }
@@ -51,10 +59,11 @@ export const Select = ({
           <panda.span fontWeight="bold">
             {selectedOption?.label}
           </panda.span>
-          <IconSelector />
+          <IconSelector size={16} />
         </SelectTrigger>
         <SelectContent
           className={css({
+            bg: "white",
             borderColor: "gray.200",
             borderStyle: "solid",
             borderWidth: "1px",
@@ -85,8 +94,10 @@ export const Select = ({
                   selectedOption.label === option
                     ? "bold"
                     : "inherit",
-                px: "4",
-                py: "2",
+                pb: "2",
+                pl: "4",
+                pr: "4",
+                pt: "2",
                 _hover: {
                   bg:
                     selectedOption.label === option.label ||
@@ -95,6 +106,7 @@ export const Select = ({
                       : "gray.100"
                 }
               })}
+              key={option.label || option}
               label={option.label || option}
               value={option.value || option}
             >

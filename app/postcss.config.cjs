@@ -1,5 +1,7 @@
 module.exports = {
   plugins: {
-    "@pandacss/dev/postcss": {}
+    "@pandacss/dev/postcss": {},
+    "@csstools/postcss-cascade-layers": {},
+    autoprefixer: {}
   }
 };

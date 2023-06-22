@@ -21,7 +21,7 @@ export const Footer = () => (
       alignItems="center"
       display="grid"
       gap="4"
-      gridTemplateColumns="3"
+      gridTemplateColumns={{ base: "2", md: "3" }}
     >
       {links.map((link) => (
         <FooterLink
