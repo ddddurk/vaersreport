@@ -10,6 +10,7 @@
     "ddddurk": "ddddurk",
     "dev": "next dev",
     "eslint": "eslint",
+    "export": "next export",
     "next": "next",
     "panda": "panda",
     "prepare": "pnpm prepare:panda",
