@@ -4,7 +4,7 @@
     "plugin:json/recommended",
     "plugin:@next/next/recommended"
   ],
-  "ignorePatterns": [".next/", "node_modules"],
+  "ignorePatterns": [".next/", "node_modules", "out", "panda"],
   "parser": "@typescript-eslint/parser",
   "overrides": [
     {

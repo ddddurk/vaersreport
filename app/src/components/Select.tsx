@@ -37,13 +37,20 @@ export const Select = ({
             borderWidth: "1px",
             cursor: "pointer",
             display: "flex",
+            fontSize: { base: "sm", md: "inherit" },
             gap: "2",
             justifyContent: "space-between",
             pos: "relative",
-            px: "4",
-            py: "2",
+            pb: "2",
+            pl: "4",
+            pr: "4",
+            pt: "2",
             rounded: "xl",
             w: "40",
+            _focus: {
+              outline: "none",
+              ring: "none"
+            },
             _hover: {
               bg: "gray.100"
             }
@@ -87,8 +94,10 @@ export const Select = ({
                   selectedOption.label === option
                     ? "bold"
                     : "inherit",
-                px: "4",
-                py: "2",
+                pb: "2",
+                pl: "4",
+                pr: "4",
+                pt: "2",
                 _hover: {
                   bg:
                     selectedOption.label === option.label ||

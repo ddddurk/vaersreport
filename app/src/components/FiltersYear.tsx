@@ -22,6 +22,6 @@ export const FiltersYear = () => {
         )
       }
       options={["All Years", ...years]}
-    ></Select>
+    />
   );
 };

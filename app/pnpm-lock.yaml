@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.6.0
     version: 0.6.0(react-dom@18.2.0)(react@18.2.0)
   '@ddddurk/ui':
-    specifier: ^2.0.0
-    version: 2.0.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.6.6)(react@18.2.0)(typescript@5.0.4)
+    specifier: ^2.0.1
+    version: 2.0.1(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.7.0)(react@18.2.0)(typescript@5.0.4)
   '@tabler/icons-react':
     specifier: ^2.22.0
     version: 2.22.0(react@18.2.0)
@@ -39,7 +39,7 @@ devDependencies:
     version: 13.4.1
   '@pandacss/dev':
     specifier: ^0.4.0
-    version: 0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.6.6)(typescript@5.0.4)
+    version: 0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.7.0)(typescript@5.0.4)
   '@types/node':
     specifier: 18.16.5
     version: 18.16.5
@@ -192,13 +192,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/markdown-remark@2.2.1(astro@2.6.6):
+  /@astrojs/markdown-remark@2.2.1(astro@2.7.0):
     resolution: {integrity: sha512-VF0HRv4GpC1XEMLnsKf6jth7JSmlt9qpqP0josQgA2eSpCIAC/Et+y94mgdBIZVBYH/yFnMoIxgKVe93xfO2GA==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.6.6(@types/node@18.16.5)
+      astro: 2.7.0(@types/node@18.16.5)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -515,14 +515,14 @@ packages:
       chalk: 5.2.0
     dev: true
 
-  /@ddddurk/ui@2.0.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.6.6)(react@18.2.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-SS5zGCymjcNnkC0wzZdDz8amd6WCSqc9M26MrmTQwcGdO583ZKkWyQJZP43VjqBezNDriEJ0V8N9Xtg2svzVgg==}
+  /@ddddurk/ui@2.0.1(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.7.0)(react@18.2.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-tbaFxCR8jM+BP6XdQcVebn1Mf/NS34XYPbxCFVuLgcJ9d43g4tI7QjXKfNnBBNsKf9DCCD5wVNIqqDrblEPakw==}
     peerDependencies:
       react: '>=17'
     dependencies:
       '@ddddurk/colors': 1.1.4
       '@dddstack/polymorph-react': 1.0.3(react@18.2.0)
-      '@pandacss/dev': 0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.6.6)(typescript@5.0.4)
+      '@pandacss/dev': 0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.7.0)(typescript@5.0.4)
       '@pandacss/preset-panda': 0.4.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -966,13 +966,13 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@pandacss/astro@0.4.0(astro@2.6.6)(typescript@5.0.4):
+  /@pandacss/astro@0.4.0(astro@2.7.0)(typescript@5.0.4):
     resolution: {integrity: sha512-TXNqIMKs6Kfvt1WXLFQTpOXdG8Yywcu5EdZmTb0puHuJ3FpUoz3mgSThBw1A0Oh+V1NSAHaZcN6CVgq7+/EbZw==}
     peerDependencies:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.4.0(typescript@5.0.4)
-      astro: 2.6.6(@types/node@18.16.5)
+      astro: 2.7.0(@types/node@18.16.5)
       autoprefixer: 10.4.14(postcss@8.4.24)
       postcss: 8.4.24
       postcss-load-config: 4.0.1(postcss@8.4.24)
@@ -1018,7 +1018,7 @@ packages:
       postcss-selector-parser: 6.0.13
       ts-pattern: 4.3.0
 
-  /@pandacss/dev@0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.6.6)(typescript@5.0.4):
+  /@pandacss/dev@0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(astro@2.7.0)(typescript@5.0.4):
     resolution: {integrity: sha512-yXOZ9E+4WoRrsA4IqG+1h14pCXS9Q99WrlsvbtexDM1hoz5Te+h2JD+4pp+8kQIXFdtXceFLx2f6J55AC1PUPw==}
     hasBin: true
     peerDependencies:
@@ -1027,7 +1027,7 @@ packages:
       astro:
         optional: true
     dependencies:
-      '@pandacss/astro': 0.4.0(astro@2.6.6)(typescript@5.0.4)
+      '@pandacss/astro': 0.4.0(astro@2.7.0)(typescript@5.0.4)
       '@pandacss/config': 0.4.0(typescript@5.0.4)
       '@pandacss/error': 0.4.0
       '@pandacss/logger': 0.4.0
@@ -1038,7 +1038,7 @@ packages:
       '@pandacss/studio': 0.4.0(@types/node@18.16.5)(@types/react-dom@18.2.1)(@types/react@18.2.0)(typescript@5.0.4)
       '@pandacss/token-dictionary': 0.4.0
       '@pandacss/types': 0.4.0
-      astro: 2.6.6(@types/node@18.16.5)
+      astro: 2.7.0(@types/node@18.16.5)
       cac: 6.7.14
       pathe: 1.1.1
       perfect-debounce: 1.0.0
@@ -2181,8 +2181,8 @@ packages:
       - supports-color
       - terser
 
-  /astro@2.6.6(@types/node@18.16.5):
-    resolution: {integrity: sha512-npeTXVaSOWKYYF6Znj6Yfxfq+WIFZ9u/Q+vtFP3nXbl7/XimvE+LbmWoK+hPFBOXC/KRLHxqQSltXJX5ALFmFg==}
+  /astro@2.7.0(@types/node@18.16.5):
+    resolution: {integrity: sha512-gUYx2R0V7fpZtFRN9f4nE0We95qYhJyAr+VW0nVFqlMMF1of9MzrjjJ+8rIGJ/6RooFK8XAaXWTQMGTok3ZzEA==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     peerDependencies:
@@ -2194,7 +2194,7 @@ packages:
       '@astrojs/compiler': 1.5.1
       '@astrojs/internal-helpers': 0.1.0
       '@astrojs/language-server': 1.0.8
-      '@astrojs/markdown-remark': 2.2.1(astro@2.6.6)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.7.0)
       '@astrojs/telemetry': 2.1.1
       '@astrojs/webapi': 2.2.0
       '@babel/core': 7.22.5
@@ -2233,12 +2233,12 @@ packages:
       preferred-pm: 3.0.3
       prompts: 2.4.2
       rehype: 12.0.1
-      semver: 7.5.0
+      semver: 7.5.2
       server-destroy: 1.0.1
       shiki: 0.14.2
       slash: 4.0.0
       string-width: 5.1.2
-      strip-ansi: 7.0.1
+      strip-ansi: 7.1.0
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
       typescript: 5.0.4
@@ -4847,6 +4847,13 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
+  /semver@7.5.2:
+    resolution: {integrity: sha512-SoftuTROv/cRjCze/scjGyiDtcUyxw1rgYQSZY7XTmtR5hX+dm76iDbTH8TkLPHCQmlbQVSSbNZCPM2hb0knnQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+
   /server-destroy@1.0.1:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
 
@@ -4971,6 +4978,12 @@ packages:
 
   /strip-ansi@7.0.1:
     resolution: {integrity: sha512-cXNxvT8dFNRVfhVME3JAe98mkXDYN2O1l7jmcwMnOslDeESg1rF/OZMtK0nRAhiari1unG5cD4jG3rapUAkLbw==}
+    engines: {node: '>=12'}
+    dependencies:
+      ansi-regex: 6.0.1
+
+  /strip-ansi@7.1.0:
+    resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
     engines: {node: '>=12'}
     dependencies:
       ansi-regex: 6.0.1
