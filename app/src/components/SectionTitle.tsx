@@ -1,15 +1,31 @@
-import type { ReactNode } from "react";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface SectionTitleProps {
-  children: ReactNode;
-}
+export interface SectionTitleProps
+  extends Omit<
+      HTMLAttributes<HTMLHeadingElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
-const SectionTitle = ({ children }: SectionTitleProps) => {
-  return (
-    <h2 className="-mb-16 mt-32 border-b pb-4 text-center text-2xl font-bold">
-      {children}
-    </h2>
-  );
-};
-
-export default SectionTitle;
+export const SectionTitle = ({
+  children,
+  ...props
+}: SectionTitleProps) => (
+  <panda.h2
+    borderColor="gray.200"
+    borderStyle="1px"
+    borderBottomWidth="1px"
+    fontSize="2xl"
+    fontWeight="bold"
+    mt="32"
+    mx="auto"
+    maxW="2xl"
+    pb="4"
+    textAlign="center"
+    {...props}
+  >
+    {children}
+  </panda.h2>
+);

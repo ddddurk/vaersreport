@@ -1,15 +1,13 @@
-import type { ReactNode } from "react";
+import type { BoxProps } from "@panda/jsx";
+import { Box } from "@panda/jsx";
 
-export interface ChartCaptionProps {
-  children: ReactNode;
-}
+export interface ChartCaptionProps extends BoxProps {}
 
-const ChartCaption = ({ children }: ChartCaptionProps) => {
-  return (
-    <span className="mt-4 block text-base font-light">
-      {children}
-    </span>
-  );
-};
-
-export default ChartCaption;
+export const ChartCaption = ({
+  children,
+  ...props
+}: ChartCaptionProps) => (
+  <Box fontWeight="light" mt="4" {...props}>
+    {children}
+  </Box>
+);

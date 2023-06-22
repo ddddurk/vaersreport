@@ -1,12 +1,23 @@
 "use client";
 
 import { getNumberFormatted } from "@lib";
+import { Box } from "@panda/jsx";
 
-const TreemapCustomTooltip = ({ active, payload }) => {
+export const ChartTreemapCustomTooltip = ({
+  active,
+  payload
+}) => {
   if (active && payload && payload.length) {
     return (
-      <div className="pointer-events-none transition-[transform_400ms_ease_0s]">
-        <div className="whitespace-nowrap border border-[rgb(204,_204,_204)] bg-white p-[0.625rem]">
+      <Box pointerEvents="none" transition="ease-in">
+        <Box
+          bg="white"
+          borderColor="gray.200"
+          borderStyle="solid"
+          borderWidth="1px"
+          p="0.625rem"
+          whiteSpace="nowrap"
+        >
           <p className="recharts-tooltip-label">
             {payload[0].payload.root.name}
           </p>
@@ -23,12 +34,10 @@ const TreemapCustomTooltip = ({ active, payload }) => {
               </span>
             </li>
           </ul>
-        </div>
-      </div>
+        </Box>
+      </Box>
     );
   }
 
   return null;
 };
-
-export default TreemapCustomTooltip;

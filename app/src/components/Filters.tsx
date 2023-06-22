@@ -1,18 +1,23 @@
 "use client";
 
-import FiltersYear from "./FiltersYear";
-import PolymorphGrid from "./PolymorphGrid";
+import { Box } from "@panda/jsx";
 
-const Filters = () => {
-  return (
-    <PolymorphGrid className="sticky top-0 z-10 !col-span-3 !col-start-1 bg-white bg-opacity-90 px-6 py-3 backdrop-blur">
-      <ul className="flex items-center space-x-6">
-        <li>
-          <FiltersYear />
-        </li>
-      </ul>
-    </PolymorphGrid>
-  );
-};
+import { FiltersYear } from "./FiltersYear";
 
-export default Filters;
+export const Filters = () => (
+  <Box
+    backdropBlur="xl"
+    backdropFilter="auto"
+    backdropSaturate="2"
+    bg="rgba(255, 255, 255, 0.75)"
+    left="0"
+    mx="auto"
+    p={{ base: "4", md: "6" }}
+    pos="fixed"
+    top="0"
+    w="full"
+    zIndex="99"
+  >
+    <FiltersYear />
+  </Box>
+);

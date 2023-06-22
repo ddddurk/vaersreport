@@ -1,18 +1,22 @@
-import type { ReactNode } from "react";
+import type { FlexProps } from "@panda/jsx";
+import { Flex, panda } from "@panda/jsx";
 
-export interface ReportBulletPointProps {
-  children: ReactNode;
-}
+export interface ReportBulletPointProps extends FlexProps {}
 
-const ReportBulletPoint = ({
-  children
-}: ReportBulletPointProps) => {
-  return (
-    <div className="mx-auto mt-8 flex w-full max-w-xl justify-center space-x-6">
-      <span className="mt-2.5 h-2 w-2 bg-black" />
-      <p>{children}</p>
-    </div>
-  );
-};
-
-export default ReportBulletPoint;
+export const ReportBulletPoint = ({
+  children,
+  ...props
+}: ReportBulletPointProps) => (
+  <Flex
+    gap={{ base: "4", md: "6" }}
+    justify="center"
+    maxW="xl"
+    mx="auto"
+    mt="8"
+    w="full"
+    {...props}
+  >
+    <panda.span bg="black" h="2" mt="2" w="2" />
+    <p>{children}</p>
+  </Flex>
+);

@@ -1,17 +1,10 @@
-import type { ReactNode } from "react";
+import type { BoxProps } from "@panda/jsx";
+import { panda } from "@panda/jsx";
 
-import PolymorphGrid from "./PolymorphGrid";
+export interface MainProps extends BoxProps {}
 
-export interface MainProps {
-  children: ReactNode;
-}
-
-const Main = ({ children }: MainProps) => {
-  return (
-    <PolymorphGrid as="main" className="px-6">
-      {children}
-    </PolymorphGrid>
-  );
-};
-
-export default Main;
+export const Main = ({ children, ...props }: MainProps) => (
+  <panda.main p={{ base: "4", md: "6" }} {...props}>
+    {children}
+  </panda.main>
+);

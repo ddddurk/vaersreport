@@ -1,11 +1,24 @@
-import type { ReactNode } from "react";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface ChartTitleProps {
-  children: ReactNode;
-}
+export interface ChartTitleProps
+  extends Omit<
+      HTMLAttributes<HTMLHeadingElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
-const ChartTitle = ({ children }: ChartTitleProps) => {
-  return <h3 className="mt-16 text-lg font-bold">{children}</h3>;
-};
-
-export default ChartTitle;
+export const ChartTitle = ({
+  children,
+  ...props
+}: ChartTitleProps) => (
+  <panda.h3
+    fontSize="lg"
+    fontWeight="bold"
+    mt={{ base: "12", md: "16" }}
+    {...props}
+  >
+    {children}
+  </panda.h3>
+);

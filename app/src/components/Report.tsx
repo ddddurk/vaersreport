@@ -26,15 +26,15 @@ import {
   YAxis
 } from "recharts";
 
-import ChartTreemapCustomContent from "./ChartTreemapCustomContent";
-import ChartTreemapCustomTooltip from "./ChartTreemapCustomTooltip";
-import DynamicText from "./DynamicText";
-import ReportBulletPoint from "./ReportBulletPoint";
-import ReportTitle from "./ReportTitle";
+import { ChartTreemapCustomContent } from "./ChartTreemapCustomContent";
+import { ChartTreemapCustomTooltip } from "./ChartTreemapCustomTooltip";
+import { DynamicText } from "./DynamicText";
+import { ReportBulletPoint } from "./ReportBulletPoint";
+import { ReportTitle } from "./ReportTitle";
 import type { SectionProps } from "./Section";
-import Section from "./Section";
+import { Section } from "./Section";
 
-const Report = () => {
+export const Report = () => {
   const { year } = useParams() as { year: undefined | Year };
 
   const chartsAges = charts.ages_chart[year || "all"];
@@ -370,5 +370,3 @@ const Report = () => {
     </>
   );
 };
-
-export default Report;
