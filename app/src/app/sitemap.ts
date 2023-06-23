@@ -1,4 +1,4 @@
-import { metadata, years } from "@lib";
+import { metadata, years } from "@src/lib";
 
 const sitemap = () =>
   ["", ...years.map((year) => `${year}`)].map((route) => ({

@@ -1,16 +1,16 @@
 "use client";
 
-import analysis from "@analysis";
-import charts from "@charts";
+import analysis from "@data/analysis.json";
+import charts from "@data/charts.json";
 import {
   chartOptions,
   colors,
   getNumberFormatted,
   getNumberPercentage,
   getTense,
-  monthsFull
-} from "@lib";
-import type { Year } from "@types";
+  months
+} from "@src/lib";
+import type { Year } from "@src/types";
 import { useParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { Fragment } from "react";
@@ -105,7 +105,7 @@ export const Report = () => {
               <Fragment>
                 Total VAERS reports {getTense("peaked", year)} in{" "}
                 <DynamicText>
-                  {monthsFull[chartsTotals.interval_most] ||
+                  {months[chartsTotals.interval_most] ||
                     chartsTotals.interval_most}
                 </DynamicText>{" "}
                 with{" "}

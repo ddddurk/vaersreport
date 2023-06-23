@@ -1,7 +1,7 @@
 "use client";
 
-import { years } from "@lib";
-import type { Year } from "@types";
+import { years } from "@src/lib";
+import type { Year } from "@src/types";
 import { useParams, useRouter } from "next/navigation";
 
 import { Select } from "./Select";

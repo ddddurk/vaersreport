@@ -1,4 +1,4 @@
-import type analysis from "@analysis";
+import type analysis from "@data/analysis.json";
 
 import type { Year } from "./year.types";
 

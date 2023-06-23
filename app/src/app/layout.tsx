@@ -1,7 +1,7 @@
 import "../index.css";
 
-import { Filters, Footer, Main } from "@components";
-import { metadata as libMetadata } from "@lib";
+import { Filters, Footer, Main } from "@src/components";
+import { metadata as libMetadata } from "@src/lib";
 import type { ReactNode } from "react";
 
 export const metadata = libMetadata;

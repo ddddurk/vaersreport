@@ -9,6 +9,7 @@ const config = defineConfig({
       transitionTimingFunction: "ease-in"
     }
   },
+  hash: true,
   include: ["./src/**/*.{ts,tsx}"],
   jsxFactory: "panda",
   jsxFramework: "react",

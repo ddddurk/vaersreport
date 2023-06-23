@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -12,12 +13,9 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@analysis": ["../data/analysis.json"],
-      "@charts": ["../data/charts.json"],
-      "@components": ["./src/components"],
-      "@lib": ["./src/lib"],
+      "@data/*": ["../data/*"],
       "@panda/*": ["./panda/*"],
-      "@types": ["./src/types"]
+      "@src/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -26,8 +24,14 @@
     ],
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false
+    "strict": false,
+    "target": "ES6"
   },
   "exclude": ["./node_modules"],
-  "include": [".next/types/**/*.ts", "panda.config.ts", "src"]
+  "include": [
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "panda.config.ts",
+    "src"
+  ]
 }

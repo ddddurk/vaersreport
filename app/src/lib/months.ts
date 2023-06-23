@@ -1,6 +1,6 @@
-import type { Month } from "@types";
+import type { Month } from "@src/types";
 
-export const monthsFull: Partial<Record<Month, string>> = {
+export const months: Partial<Record<Month, string>> = {
   "Jan.": "January",
   "Feb.": "February",
   "Mar.": "March",

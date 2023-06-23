@@ -1,4 +1,4 @@
-import type { Year } from "@types";
+import type { Year } from "@src/types";
 
 export const getTense = (word: string, year?: Year) =>
   !year || year === new Date().getFullYear().toString()

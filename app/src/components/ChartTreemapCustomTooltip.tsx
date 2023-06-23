@@ -1,7 +1,7 @@
 "use client";
 
-import { getNumberFormatted } from "@lib";
 import { Box } from "@panda/jsx";
+import { getNumberFormatted } from "@src/lib";
 
 export const ChartTreemapCustomTooltip = ({
   active,
