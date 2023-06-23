@@ -1,4 +1,5 @@
 *.csv
+*.tsbuildinfo
 .DS_Store
 .next
 .vscode
