@@ -1,6 +1,6 @@
 "use client";
 
-import { colors } from "@lib";
+import { colors } from "@src/lib";
 
 export const ChartTreemapCustomContent = ({
   depth,

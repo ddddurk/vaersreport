@@ -1,4 +1,4 @@
-import { Report } from "@components";
+import { Report } from "@src/components";
 import type { NextPage } from "next";
 
 const Page: NextPage = () => <Report />;

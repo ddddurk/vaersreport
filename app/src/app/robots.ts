@@ -1,4 +1,4 @@
-import { metadata } from "@lib";
+import { metadata } from "@src/lib";
 
 const robots = () => ({
   rules: [

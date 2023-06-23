@@ -1,16 +1,8 @@
 import { panda } from "@panda/jsx";
+import { links } from "@src/lib";
 
 import { Container } from "./Container";
 import { FooterLink } from "./FooterLink";
-
-const links = [
-  { href: "https://ddddurk.com", text: "ddddurk" },
-  {
-    href: "https://github.com/dddvilla/vaersreport",
-    text: "GitHub"
-  },
-  { href: "https://vaers.hhs.gov/index.html", text: "VAERS" }
-];
 
 export const Footer = () => (
   <Container
@@ -23,7 +15,7 @@ export const Footer = () => (
       gap="4"
       gridTemplateColumns={{ base: "2", md: "3" }}
     >
-      {links.map((link) => (
+      {[links.ddddurk, links.github, links.vaers].map((link) => (
         <FooterLink
           css={{ w: "full" }}
           href={link.href}

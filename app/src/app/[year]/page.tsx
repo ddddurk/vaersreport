@@ -1,5 +1,5 @@
-import { Report } from "@components";
-import { years } from "@lib";
+import { Report } from "@src/components";
+import { years } from "@src/lib";
 import type { NextPage } from "next";
 
 export const generateStaticParams = async () =>

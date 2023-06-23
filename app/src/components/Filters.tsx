@@ -2,17 +2,12 @@
 
 import { Box } from "@panda/jsx";
 
+import { Container } from "./Container";
 import { FiltersYear } from "./FiltersYear";
 
 export const Filters = () => (
   <Box
-    backdropBlur="xl"
-    backdropFilter="auto"
-    backdropSaturate="2"
-    bg={{
-      base: "white",
-      md: "rgba(255, 255, 255, 0.75)"
-    }}
+    bg="white"
     left="0"
     mx="auto"
     p={{ base: "4", md: "6" }}
@@ -21,6 +16,8 @@ export const Filters = () => (
     w="full"
     zIndex="99"
   >
-    <FiltersYear />
+    <Container maxW="7xl">
+      <FiltersYear />
+    </Container>
   </Box>
 );
