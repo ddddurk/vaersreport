@@ -18,8 +18,6 @@ import pandas as pd
 
 from fastapi.middleware.cors import CORSMiddleware
 
-print(os.getcwd())
-
 app = fastapi.FastAPI()
 
 app.add_middleware(
@@ -33,16 +31,22 @@ app.add_middleware(
 cache = {}
 
 df_data = pd.read_csv(
-    f"{constants.CSV_MERGED_PATH}/data.csv", encoding="latin1", engine="python", sep=","
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/data.csv",
+    encoding="latin1",
+    engine="python",
+    sep=",",
 )
 df_symptoms = pd.read_csv(
-    f"{constants.CSV_MERGED_PATH}/symptoms.csv",
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/symptoms.csv",
     encoding="latin1",
     engine="python",
     sep=",",
 )
 df_vax = pd.read_csv(
-    f"{constants.CSV_MERGED_PATH}/vax.csv", encoding="latin1", engine="python", sep=","
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/vax.csv",
+    encoding="latin1",
+    engine="python",
+    sep=",",
 )
 
 
