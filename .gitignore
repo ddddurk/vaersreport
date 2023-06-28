@@ -1,9 +1,9 @@
 *.csv
 *.tsbuildinfo
 .DS_Store
-.next
 .vscode
+__pycache__
 AllVAERSDataCSVS.zip
+dist
 node_modules
-out
 panda

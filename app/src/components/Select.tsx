@@ -1,20 +1,17 @@
-"use client";
-
 import type { SelectProps as ArkSelectProps } from "@ark-ui/react";
 import {
   Select as ArkSelect,
   SelectContent,
-  SelectLabel,
   SelectOption,
   SelectTrigger
 } from "@ark-ui/react";
 import { css } from "@panda/css";
-import { panda } from "@panda/jsx";
+import { Box, panda } from "@panda/jsx";
 import { IconSelector } from "@tabler/icons-react";
 import type { ReactNode } from "react";
 
 export interface SelectProps extends ArkSelectProps {
-  options: string[] | { label: string; value: string }[];
+  options: { label: string; value: string }[];
 }
 
 export const Select = ({
@@ -24,10 +21,7 @@ export const Select = ({
 }: SelectProps) => (
   <ArkSelect {...props}>
     {({ selectedOption }) => (
-      <>
-        <SelectLabel className={css({ display: "none" })}>
-          Year
-        </SelectLabel>
+      <Box pos="relative">
         <SelectTrigger
           className={css({
             alignItems: "center",
@@ -40,13 +34,12 @@ export const Select = ({
             fontSize: { base: "sm", md: "inherit" },
             gap: "2",
             justifyContent: "space-between",
-            pos: "relative",
             pb: "2",
             pl: "4",
             pr: "4",
             pt: "2",
             rounded: "xl",
-            w: "40",
+            w: { base: "32", md: "40" },
             _focus: {
               outline: "none",
               ring: "none"
@@ -72,26 +65,24 @@ export const Select = ({
             overflowY: "scroll",
             pos: "absolute",
             rounded: "xl",
-            w: "40"
+            top: "16",
+            w: { base: "32", md: "40" }
           })}
         >
           {options.map((option) => (
             <SelectOption
               className={css({
                 bg:
-                  selectedOption.label === option.label ||
-                  selectedOption.label === option
+                  selectedOption.label === option.label
                     ? "blue.600"
                     : "inherit",
                 color:
-                  selectedOption.label === option.label ||
-                  selectedOption.label === option
+                  selectedOption.label === option.label
                     ? "white"
                     : "inherit",
                 cursor: "pointer",
                 fontWeight:
-                  selectedOption.label === option.label ||
-                  selectedOption.label === option
+                  selectedOption.label === option.label
                     ? "bold"
                     : "inherit",
                 pb: "2",
@@ -100,22 +91,21 @@ export const Select = ({
                 pt: "2",
                 _hover: {
                   bg:
-                    selectedOption.label === option.label ||
-                    selectedOption.label === option
+                    selectedOption.label === option.label
                       ? "blue.600"
                       : "gray.100"
                 }
               })}
-              key={option.label || option}
-              label={option.label || option}
-              value={option.value || option}
+              key={option.label}
+              label={option.label}
+              value={option.value}
             >
-              {option.label || option}
+              {option.label}
             </SelectOption>
           ))}
           {children as ReactNode}
         </SelectContent>
-      </>
+      </Box>
     )}
   </ArkSelect>
 );

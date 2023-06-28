@@ -14,16 +14,16 @@ export const SectionTitle = ({
   ...props
 }: SectionTitleProps) => (
   <panda.h2
-    borderColor="gray.200"
-    borderStyle="1px"
     borderBottomWidth="1px"
-    fontSize="2xl"
+    borderColor="gray.200"
+    borderStyle="solid"
+    fontSize={{ base: "xl", md: "2xl" }}
     fontWeight="bold"
-    mt="32"
-    mx="auto"
     maxW="2xl"
+    mt={{ base: "24", md: "36" }}
     pb="4"
     textAlign="center"
+    w="full"
     {...props}
   >
     {children}

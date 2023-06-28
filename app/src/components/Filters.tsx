@@ -1,23 +1,23 @@
 "use client";
 
-import { Box } from "@panda/jsx";
+import type { BoxProps } from "@panda/jsx";
+import { Box, Flex } from "@panda/jsx";
 
-import { Container } from "./Container";
-import { FiltersYear } from "./FiltersYear";
+export interface FilterProps extends BoxProps {}
 
-export const Filters = () => (
+export const Filters = ({ children, ...props }: FilterProps) => (
   <Box
     bg="white"
     left="0"
-    mx="auto"
-    p={{ base: "4", md: "6" }}
+    p="4"
     pos="fixed"
     top="0"
     w="full"
     zIndex="99"
+    {...props}
   >
-    <Container maxW="7xl">
-      <FiltersYear />
-    </Container>
+    <Flex align="center" gap="4" maxW="6xl" mx="auto">
+      {children}
+    </Flex>
   </Box>
 );

@@ -1,25 +1,24 @@
-import { css as pandaCss } from "@panda/css";
+import { css } from "@panda/css";
+import { panda } from "@panda/jsx";
 import type { SystemStyleObject } from "@panda/types";
 import { IconArrowUpRight } from "@tabler/icons-react";
-import type { LinkProps } from "next/link";
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { Pill } from "./ddddurkUi";
 
-interface FooterLinkProps extends LinkProps {
+interface FooterLinkProps extends SystemStyleObject {
+  href: string;
   children: ReactNode;
-  css?: SystemStyleObject;
 }
 
 export const FooterLink = ({
   children,
-  css,
+  href,
   ...props
 }: FooterLinkProps) => (
-  <Link target="_blank" {...props}>
+  <panda.a href={href} target="_blank">
     <Pill
-      className={pandaCss({
+      className={css({
         alignItems: "center",
         color: "gray.500",
         display: "flex",
@@ -27,12 +26,12 @@ export const FooterLink = ({
         gap: "2",
         justifyContent: "space-between",
         _hover: { color: "inherit" },
-        ...css
+        ...props
       })}
       type="hover"
     >
       <span>{children}</span>
       <IconArrowUpRight size={16} />
     </Pill>
-  </Link>
+  </panda.a>
 );

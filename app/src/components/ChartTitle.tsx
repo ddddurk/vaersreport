@@ -2,7 +2,7 @@ import { panda } from "@panda/jsx";
 import type { SystemStyleObject } from "@panda/types";
 import type { HTMLAttributes } from "react";
 
-export interface ChartTitleProps
+export interface ChartTitle
   extends Omit<
       HTMLAttributes<HTMLHeadingElement>,
       "color" | "content" | "translate"
@@ -12,11 +12,13 @@ export interface ChartTitleProps
 export const ChartTitle = ({
   children,
   ...props
-}: ChartTitleProps) => (
+}: ChartTitle) => (
   <panda.h3
-    fontSize="lg"
+    fontSize={{ base: "md", md: "lg" }}
     fontWeight="bold"
-    mt={{ base: "12", md: "16" }}
+    maxW="2xl"
+    mt="16"
+    w="full"
     {...props}
   >
     {children}
