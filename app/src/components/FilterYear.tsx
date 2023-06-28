@@ -1,11 +1,12 @@
-import { getData, setParams, useParams } from "@src/lib";
+import { useApi } from "@src/hooks";
+import { setParams, useParams } from "@src/lib";
 
 import { Select } from "./Select";
 
 export const FilterYear = () => {
-  const { year } = useParams();
+  const { data } = useApi();
 
-  const data = getData();
+  const { year } = useParams();
 
   return (
     <Select
@@ -18,7 +19,7 @@ export const FilterYear = () => {
       }
       options={[
         { label: "All", value: "All" },
-        ...data.years.map((year: string) => ({
+        ...data.list.years.map((year: string) => ({
           label: year,
           value: year
         }))

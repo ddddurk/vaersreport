@@ -16,7 +16,13 @@ export const Filters = ({ children, ...props }: FilterProps) => (
     zIndex="99"
     {...props}
   >
-    <Flex align="center" gap="4" maxW="6xl" mx="auto">
+    <Flex
+      align="center"
+      gap="4"
+      justify={{ base: "center", md: "start" }}
+      maxW="6xl"
+      mx="auto"
+    >
       {children}
     </Flex>
   </Box>
