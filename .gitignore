@@ -1,5 +1,5 @@
-*.csv
 *.tsbuildinfo
+extracted
 .DS_Store
 .vscode
 __pycache__
