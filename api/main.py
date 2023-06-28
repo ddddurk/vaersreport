@@ -31,19 +31,19 @@ app.add_middleware(
 cache = {}
 
 df_data = pd.read_csv(
-    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/data.csv",
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/DATA.csv",
     encoding="latin1",
     engine="python",
     sep=",",
 )
 df_symptoms = pd.read_csv(
-    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/symptoms.csv",
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/SYMPTOMS.csv",
     encoding="latin1",
     engine="python",
     sep=",",
 )
 df_vax = pd.read_csv(
-    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/vax.csv",
+    f"{os.getcwd()}/{constants.CSV_MERGED_PATH}/VAX.csv",
     encoding="latin1",
     engine="python",
     sep=",",
