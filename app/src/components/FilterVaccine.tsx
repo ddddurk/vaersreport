@@ -1,12 +1,11 @@
-import { useData } from "@src/hooks";
-import { setParams, useParams } from "@src/lib";
+import { getData, setParams, useParams } from "@src/lib";
 
 import { Select } from "./Select";
 
 export const FilterVaccine = () => {
   const { vaccine } = useParams();
 
-  const { data } = useData();
+  const data = getData();
 
   return (
     <Select
