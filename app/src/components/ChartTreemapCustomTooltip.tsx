@@ -1,12 +1,10 @@
-"use client";
-
-import { Box } from "@panda/jsx";
+import { Box, panda } from "@panda/jsx";
 import { getNumberFormatted } from "@src/lib";
 
 export const ChartTreemapCustomTooltip = ({
   active,
   payload
-}) => {
+}: any) => {
   if (active && payload && payload.length) {
     return (
       <Box pointerEvents="none" transition="ease-in">
@@ -19,12 +17,15 @@ export const ChartTreemapCustomTooltip = ({
           whiteSpace="nowrap"
         >
           <p className="recharts-tooltip-label">
-            {payload[0].payload.root.name}
+            {payload[0].payload.name}
           </p>
           <ul className="recharts-tooltip-item-list">
-            <li className="recharts-tooltip-item">
+            <panda.li
+              color="blue.400"
+              className="recharts-tooltip-item"
+            >
               <span className="recharts-tooltip-item-name">
-                {payload[0].payload.name}
+                {payload[0].payload.label}
               </span>
               <span className="recharts-tooltip-item-separator">
                 &nbsp;:&nbsp;
@@ -32,7 +33,7 @@ export const ChartTreemapCustomTooltip = ({
               <span className="recharts-tooltip-item-value">
                 {getNumberFormatted(payload[0].value)}
               </span>
-            </li>
+            </panda.li>
           </ul>
         </Box>
       </Box>

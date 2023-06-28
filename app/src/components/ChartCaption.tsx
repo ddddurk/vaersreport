@@ -1,13 +1,25 @@
-import type { BoxProps } from "@panda/jsx";
-import { Box } from "@panda/jsx";
+import { panda } from "@panda/jsx";
+import type { SystemStyleObject } from "@panda/types";
+import type { HTMLAttributes } from "react";
 
-export interface ChartCaptionProps extends BoxProps {}
+export interface ChartCaptionProps
+  extends Omit<
+      HTMLAttributes<HTMLHeadingElement>,
+      "color" | "content" | "translate"
+    >,
+    SystemStyleObject {}
 
 export const ChartCaption = ({
   children,
   ...props
 }: ChartCaptionProps) => (
-  <Box fontWeight="light" mt="4" {...props}>
+  <panda.p
+    color="gray.600"
+    maxW="2xl"
+    mt="2"
+    w="full"
+    {...props}
+  >
     {children}
-  </Box>
+  </panda.p>
 );
