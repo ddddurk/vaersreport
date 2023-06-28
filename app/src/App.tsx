@@ -24,15 +24,16 @@ import {
   SectionTitle,
   Title
 } from "@src/components";
-import { useData } from "@src/hooks";
-import { getNumberFormatted, useParams } from "@src/lib";
+import {
+  getData,
+  getNumberFormatted,
+  useParams
+} from "@src/lib";
 
 const App = () => {
-  const { data } = useData();
+  const data = getData();
 
   const { vaccine, year } = useParams();
-
-  if (!data) return null;
 
   return (
     <Main>

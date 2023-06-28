@@ -1,5 +1,0 @@
-black
-black[jupyter]
-fastapi
-pandas
-uvicorn
