@@ -4,16 +4,16 @@ import {
   BulletPoints,
   Chart,
   ChartCaption,
-  ChartDataAges,
+  ChartDataAge,
   ChartDataDied,
   ChartDataDisabled,
   ChartDataHospital,
-  ChartDataSexes,
-  ChartDataTotals,
+  ChartDataSex,
+  ChartDataTotal,
   Charts,
   ChartTitle,
-  ChartVaxManufacturers,
-  ChartVaxVaccines,
+  ChartVaxManufacturer,
+  ChartVaxType,
   DynamicText,
   Filters,
   FilterVaccine,
@@ -24,16 +24,15 @@ import {
   SectionTitle,
   Title
 } from "@src/components";
-import {
-  getData,
-  getNumberFormatted,
-  useParams
-} from "@src/lib";
+import { useApi } from "@src/hooks";
+import { getNumberFormatted, useParams } from "@src/lib";
 
 const App = () => {
-  const data = getData();
+  const { data } = useApi();
 
   const { vaccine, year } = useParams();
+
+  if (!data) return null;
 
   return (
     <Main>
@@ -62,34 +61,40 @@ const App = () => {
             {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartDataTotals data={data.data.totals.data} />
+            <ChartDataTotal
+              data={data.analyze.data.total.data}
+            />
           </RechartWrapper>
         </Chart>
         <Chart>
           <ChartTitle>
-            VAERS, By Victim Age, {vaccine || "All Vaccines"},{" "}
+            VAERS, Victim Age, {vaccine || "All Vaccines"},{" "}
             {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartDataAges data={data.data.ages.data} />
+            <ChartDataAge data={data.analyze.data.age.data} />
           </RechartWrapper>
           <ChartCaption>
             Age unknown for{" "}
-            <b>{getNumberFormatted(data.data.ages.unknown)}</b>{" "}
+            <b>
+              {getNumberFormatted(data.analyze.data.age.unknown)}
+            </b>{" "}
             reports.
           </ChartCaption>
         </Chart>
         <Chart>
           <ChartTitle>
-            VAERS, By Victim Sex, {vaccine || "All Vaccines"},{" "}
+            VAERS, Victim Sex, {vaccine || "All Vaccines"},{" "}
             {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartDataSexes data={data.data.sexes.chart} />
+            <ChartDataSex data={data.analyze.data.sex.chart} />
           </RechartWrapper>
           <ChartCaption>
             Sex unknown for{" "}
-            <b>{getNumberFormatted(data.data.sexes.unknown)}</b>{" "}
+            <b>
+              {getNumberFormatted(data.analyze.data.sex.unknown)}
+            </b>{" "}
             reports.
           </ChartCaption>
         </Chart>
@@ -98,29 +103,33 @@ const App = () => {
       <Charts>
         <Chart>
           <ChartTitle>
-            VAERS, By Outcome Hospital,{" "}
-            {vaccine || "All Vaccines"}, {year || "All Years"}
-          </ChartTitle>
-          <RechartWrapper>
-            <ChartDataHospital data={data.data.hospital.chart} />
-          </RechartWrapper>
-        </Chart>
-        <Chart>
-          <ChartTitle>
-            VAERS, By Outcome Disabled,{" "}
-            {vaccine || "All Vaccines"}, {year || "All Years"}
-          </ChartTitle>
-          <RechartWrapper>
-            <ChartDataDisabled data={data.data.disabled.chart} />
-          </RechartWrapper>
-        </Chart>
-        <Chart>
-          <ChartTitle>
-            VAERS, By Outcome Died, {vaccine || "All Vaccines"},{" "}
+            VAERS, Hospital, {vaccine || "All Vaccines"},{" "}
             {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartDataDied data={data.data.died.chart} />
+            <ChartDataHospital
+              data={data.analyze.data.hospital.chart}
+            />
+          </RechartWrapper>
+        </Chart>
+        <Chart>
+          <ChartTitle>
+            VAERS, Disabled, {vaccine || "All Vaccines"},{" "}
+            {year || "All Years"}
+          </ChartTitle>
+          <RechartWrapper>
+            <ChartDataDisabled
+              data={data.analyze.data.disabled.chart}
+            />
+          </RechartWrapper>
+        </Chart>
+        <Chart>
+          <ChartTitle>
+            VAERS, Died, {vaccine || "All Vaccines"},{" "}
+            {year || "All Years"}
+          </ChartTitle>
+          <RechartWrapper>
+            <ChartDataDied data={data.analyze.data.died.chart} />
           </RechartWrapper>
         </Chart>
       </Charts>
@@ -128,22 +137,22 @@ const App = () => {
       <Charts>
         <Chart>
           <ChartTitle>
-            VAERS, By Vaccine Manufacturer,{" "}
+            VAERS, Vaccine Manufacturer,{" "}
             {vaccine || "All Vaccines"}, {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartVaxManufacturers
-              data={data.vax.manufacturers.data}
+            <ChartVaxManufacturer
+              data={data.analyze.vax.manufacturer.data}
             />
           </RechartWrapper>
         </Chart>
         <Chart>
           <ChartTitle>
-            VAERS, By Vaccine Type, {vaccine || "All Vaccines"},{" "}
+            VAERS, Vaccine Type, {vaccine || "All Vaccines"},{" "}
             {year || "All Years"}
           </ChartTitle>
           <RechartWrapper>
-            <ChartVaxVaccines data={data.vax.vaccines.data} />
+            <ChartVaxType data={data.analyze.vax.type.data} />
           </RechartWrapper>
           <ChartCaption>
             Unknown is represented by <b>UNK</b>.

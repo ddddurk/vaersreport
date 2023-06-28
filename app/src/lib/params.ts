@@ -14,6 +14,7 @@ export const useParams = () => {
   const params = getParams();
 
   return {
+    params,
     vaccine: params.get("vaccine"),
     year: params.get("year")
   };

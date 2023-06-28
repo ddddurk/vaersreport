@@ -1,11 +1,12 @@
-import { getData, setParams, useParams } from "@src/lib";
+import { useApi } from "@src/hooks";
+import { setParams, useParams } from "@src/lib";
 
 import { Select } from "./Select";
 
 export const FilterVaccine = () => {
-  const { vaccine } = useParams();
+  const { data } = useApi();
 
-  const data = getData();
+  const { vaccine } = useParams();
 
   return (
     <Select
@@ -18,7 +19,7 @@ export const FilterVaccine = () => {
       }
       options={[
         { label: "All", value: "All" },
-        ...data.vaccines.map((vaccine: string) => ({
+        ...data.list.vax.type.map((vaccine: string) => ({
           label: vaccine,
           value: vaccine
         }))
