@@ -13,9 +13,12 @@ import filters.filter_data_vaccine
 import filters.filter_data_year
 import filters.filter_vax_data
 import lists.list_vax_vaccines
+import os
 import pandas as pd
 
 from fastapi.middleware.cors import CORSMiddleware
+
+print(os.getcwd())
 
 app = fastapi.FastAPI()
 
