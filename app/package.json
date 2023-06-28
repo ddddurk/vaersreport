@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "^3.0.1",
-    "@ddddurk/cli": "^2.0.1",
+    "@ddddurk/cli": "^1.2.0",
     "@pandacss/dev": "^0.4.0",
     "@pandacss/preset-panda": "^0.4.0",
     "@types/react": "^18.0.37",
