@@ -16,6 +16,8 @@
     "prepare:panda": "panda codegen --clean",
     "prettier": "prettier",
     "preview": "vite preview",
+    "test:typecheck": "tsc --noEmit",
+    "tsc": "tsc",
     "vite": "vite"
   },
   "dependencies": {
