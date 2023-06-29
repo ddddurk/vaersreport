@@ -19,7 +19,7 @@ export const Filters = ({ children, ...props }: FilterProps) => (
     <Flex
       align="center"
       gap="4"
-      justify={{ base: "center", md: "start" }}
+      justify="start"
       maxW="6xl"
       mx="auto"
     >
