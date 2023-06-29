@@ -17,13 +17,11 @@ app.add_middleware(
 
 
 @app.get("/")
-def root(vaccine: None | str = None, year: None | str = None):
+def api(vaccine: None | str = None, year: None | str = None):
     if vaccine is None and year is None:
         return file_data_read("all")
 
     key = f"{vaccine if vaccine else ''}{year if year else ''}"
-
-    print(key)
 
     if key in DATA_LARGE_KEYS.keys():
         return file_data_read(key)
