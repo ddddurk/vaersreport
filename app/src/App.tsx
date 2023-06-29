@@ -19,9 +19,11 @@ import {
   FilterVaccine,
   FilterYear,
   Footer,
+  Loading,
   Main,
   RechartWrapper,
   SectionTitle,
+  Spinner,
   Title
 } from "@src/components";
 import { useApi } from "@src/hooks";
@@ -32,7 +34,12 @@ const App = () => {
 
   const { vaccine, year } = useParams();
 
-  if (!data) return null;
+  if (!data)
+    return (
+      <Loading>
+        <Spinner />
+      </Loading>
+    );
 
   return (
     <Main>
