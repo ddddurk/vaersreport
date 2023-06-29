@@ -2,12 +2,12 @@ from count.count_total import count_total
 from group.group_vax_manufacturer import group_vax_manufacturer
 
 
-def analyze_vax_manufacturer(df_data, df_vax):
+def analyze_vax_manufacturer(df_DATA, df_VAX):
     results = {}
 
-    total = count_total(df_data)
+    total = count_total(df_DATA)
 
-    group = group_vax_manufacturer(df_vax)
+    group = group_vax_manufacturer(df_VAX)
 
     data = []
 

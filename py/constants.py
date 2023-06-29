@@ -13,12 +13,25 @@ CSV_EXTRACTED_PATH = f"{CSV_PATH}/extracted"
 CSV_MERGED_PATH = f"{CSV_PATH}/merged"
 
 DATA_PATH = f"../data"
-DATA_PRE_ANALYZED = {
-    "all": [None, None],
-    "2022": [None, "2022"],
-    "COVID192022": ["COVID19", "2022"],
-    "2021": [None, "2021"],
-    "COVID192021": ["COVID19", "2021"],
+DATA_LARGE_KEYS = {
+    "all": {
+        "exclude": False,
+        "filter": [None, None],
+    },
+    "COVID19": {"exclude": False, "filter": ["COVID19", None]},
+    "2022": {"exclude": True, "filter": [None, "2022"]},
+    "COVID192022": {
+        "exclude": True,
+        "filter": ["COVID19", "2022"],
+    },
+    "2021": {
+        "exclude": True,
+        "filter": [None, "2021"],
+    },
+    "COVID192021": {
+        "exclude": True,
+        "filter": ["COVID19", "2021"],
+    },
 }
 
 MONTHS = [
