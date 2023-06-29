@@ -38,6 +38,17 @@ DATA_LARGE_KEYS = {
         "filter": ["COVID19", "2021"],
     },
 }
+DTYPES = {
+    "DATA": {
+        "AGE_YRS": "float32",
+        "SEX": "category",
+        "DIED": "category",
+        "HOSPITAL": "category",
+        "DISABLE": "category",
+    },
+    "SYMPTOMS": {},
+    "VAX": {},
+}
 
 MONTHS = [
     "Jan",
