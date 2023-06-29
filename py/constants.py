@@ -18,20 +18,36 @@ DATA_LARGE_KEYS = {
         "exclude": False,
         "filter": [None, None],
     },
-    "COVID19": {"exclude": False, "filter": ["COVID19", None]},
-    "2022": {"exclude": True, "filter": [None, "2022"]},
+    "COVID19": {"exclude": True, "filter": ["COVID19", None]},
+    "2023": {"exclude": False, "filter": [None, "2023"]},
+    "COVID192023": {
+        "exclude": True,
+        "filter": ["COVID19", "2023"],
+    },
+    "2022": {"exclude": False, "filter": [None, "2022"]},
     "COVID192022": {
         "exclude": True,
         "filter": ["COVID19", "2022"],
     },
     "2021": {
-        "exclude": True,
+        "exclude": False,
         "filter": [None, "2021"],
     },
     "COVID192021": {
         "exclude": True,
         "filter": ["COVID19", "2021"],
     },
+}
+DTYPES = {
+    "DATA": {
+        "AGE_YRS": "float32",
+        "SEX": "category",
+        "DIED": "category",
+        "HOSPITAL": "category",
+        "DISABLE": "category",
+    },
+    "SYMPTOMS": {},
+    "VAX": {},
 }
 
 MONTHS = [
