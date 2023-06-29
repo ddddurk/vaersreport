@@ -1,7 +1,7 @@
 import { useParams } from "@src/lib";
 import { useQuery } from "@tanstack/react-query";
 
-const DEV_API = "http://localhost:3000";
+const DEV_API = "http://localhost:3001";
 const PROD_API = "https://api.vaersreport.com";
 
 const API_URL =

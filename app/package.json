@@ -9,7 +9,7 @@
     "chore:lint:eslint": "eslint --fix './**/*.{js,json,mdx,ts,tsx,yaml}'",
     "chore:lint:prettier": "prettier --write --plugin-search-dir=. .",
     "ddddurk": "ddddurk",
-    "dev": "vite --port 3001",
+    "dev": "vite --port 3000",
     "eslint": "eslint",
     "panda": "panda",
     "prepare": "pnpm prepare:panda",

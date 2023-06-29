@@ -8,59 +8,50 @@ from analyze.analyze_total import analyze_total
 from analyze.analyze_vax_manufacturer import analyze_vax_manufacturer
 from analyze.analyze_vax_type import analyze_vax_type
 from constants import YEARS
-from df import df
-from filter.filter_data_year import filter_data_year
-from filter.filter_data_vaccine import filter_data_vaccine
-from filter.filter_vax_data import filter_vax_data
+from filter.filter import filter
 from list.list_vax_type import list_vax_type
-
-dfs = df()
 
 
 def main(vaccine, year):
     results = {}
 
-    if year:
-        df_data_filtered = filter_data_year(dfs["df_data"], year)
-    else:
-        df_data_filtered = dfs["df_data"]
+    filtered_dfs = filter(vaccine, year)
 
-    if vaccine:
-        df_data_filtered = filter_data_vaccine(df_data_filtered, dfs["df_vax"], vaccine)
-
-    df_vax_filtered = filter_vax_data(df_data_filtered, dfs["df_vax"])
-
-    results["total"] = analyze_total(df_data_filtered)
+    results["total"] = analyze_total(filtered_dfs["df_DATA"])
 
     analyze = {}
 
     data = {}
 
-    data["age"] = analyze_data_age(df_data_filtered)
+    data["age"] = analyze_data_age(filtered_dfs["df_DATA"])
 
-    data["died"] = analyze_data_died(df_data_filtered)
+    data["died"] = analyze_data_died(filtered_dfs["df_DATA"])
 
-    data["disabled"] = analyze_data_disabled(df_data_filtered)
+    data["disabled"] = analyze_data_disabled(filtered_dfs["df_DATA"])
 
-    data["hospital"] = analyze_data_hospital(df_data_filtered)
+    data["hospital"] = analyze_data_hospital(filtered_dfs["df_DATA"])
 
-    data["sex"] = analyze_data_sex(df_data_filtered)
+    data["sex"] = analyze_data_sex(filtered_dfs["df_DATA"])
 
-    data["total"] = analyze_data_total(df_data_filtered, "months" if year else "years")
+    data["total"] = analyze_data_total(
+        filtered_dfs["df_DATA"], "months" if year else "years"
+    )
 
     analyze["data"] = data
 
     vax = {}
 
-    vax["manufacturer"] = analyze_vax_manufacturer(df_data_filtered, df_vax_filtered)
+    vax["manufacturer"] = analyze_vax_manufacturer(
+        filtered_dfs["df_DATA"], filtered_dfs["df_VAX"]
+    )
 
-    vax["type"] = analyze_vax_type(df_data_filtered, df_vax_filtered)
+    vax["type"] = analyze_vax_type(filtered_dfs["df_DATA"], filtered_dfs["df_VAX"])
 
     analyze["vax"] = vax
 
     results["analyze"] = analyze
 
-    list = {"vax": {"type": list_vax_type(df_vax_filtered)}, "years": YEARS}
+    list = {"vax": {"type": list_vax_type(filtered_dfs["df_VAX"])}, "years": YEARS}
 
     results["list"] = list
 
