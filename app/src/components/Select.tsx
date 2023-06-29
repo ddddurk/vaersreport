@@ -61,11 +61,11 @@ export const Select = ({
             borderStyle: "solid",
             borderWidth: "1px",
             maxH: "50vh",
-            mt: "2",
+            mt: "1",
             overflowY: "scroll",
             pos: "absolute",
             rounded: "xl",
-            top: "16",
+            top: "12",
             w: { base: "32", md: "40" }
           })}
         >
